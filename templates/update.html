@@ -1,0 +1,12 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+<form action="" method="POST">{% csrf_token %} <!-- ←django特有のセキュリティ対策です。これがないとエラーが起きます -->
+  <!-- {{form.title}}
+  {{form.memo}}
+  {{form.priority}}
+  {{form.duedate}} -->
+  {{form.as_p}}
+  <input type="submit" value="更新する">
+</form>
+{% endblock content %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">削除画面</h1>
+    <p class="lead">このTodoを削除しますか？</p>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="alert alert-{{object.priority}}" role="alert">
+    <p>タイトル：{{ object.title }}</p>
+    <p>中身：{{ object.memo }}</p>
+    <p>期日：{{ object.duedate }}</p>
+  </div>
+  <form action="" method='POST' style="text-align:center;"> {% csrf_token %}
+    <input class="input-arrapnge"type="submit" value='するぜ！！！' style="    margin-right: 30px;
+    ">
+    <a href="{%url 'list' %}" style="color: black;
+    border: .1px solid gray;
+    padding: 4px;
+    text-decoration: none;">しません！！！</a>
+  </form>
+</div>
+{% endblock content%}

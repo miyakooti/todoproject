@@ -1,0 +1,10 @@
+{% extends 'base.html' %} 
+<!-- これはbase.htmlの一部ですよという気持ち -->
+
+{% block content %}
+<form action="" method="POST">{% csrf_token %} <!-- ←django特有のセキュリティ対策です。これがないとエラーが起きます -->
+  {{form.as_p}}
+  <!-- なんかpタグで囲んでくれるらしい、いや、pタグで囲みながら、fieldsで指定したカラムを表示してくれるということかな？ -->
+  <input type="submit" value="作成する">
+</form>
+{% endblock content %}
